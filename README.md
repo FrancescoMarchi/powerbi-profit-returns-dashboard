@@ -1,2 +1,2 @@
 # powerbi-profit-returns-dashboard
-Power BI dashboard to pinpoint where profit is created vs eroded by returns. Clean star schema (FactOrders, Returns, DimDate, DimProduct, DimState, DimSegment), validated measures (Adjusted Profit, Margin %, Sales/Profit Loss %), Year→Quarter &amp; Region slicers, dynamic titles, tooltips. Sub-Category Top 5 winners &amp; Bottom 3 laggards for action.
+Power BI dashboard to pinpoint profit drivers and return-driven margin erosion. Star schema + validated measures (Adjusted Profit, Margin %, Sales/Profit Loss %). Year→Quarter & Region slicers. Segment→Category→Sub-Category drilldown with Top-5/Bottom-3; Sub-Category uses combo bars + margin line and tooltips.
