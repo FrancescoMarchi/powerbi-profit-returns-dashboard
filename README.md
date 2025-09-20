@@ -1,53 +1,61 @@
+![Live demo – 20s walkthrough](docs/gif/walkthrough.gif)
+
 # Profit & Returns Performance Dashboard (Power BI)
 
-**Purpose.** Identify where the business is **winning** and where margin is **eroded by returns** so leaders know **where to intervene**.
+**Purpose:** pinpoint where profit is created and where margin is eroded by returns—so actions are targeted.
 
 - **Model:** clean star schema (FactOrders, Returns, DimDate ✓ marked, DimProduct, DimState, DimSegment)
-- **Measures:** Adjusted Sales/Profit, Returned Sales/Profit, **Adjusted Margin %**, **Sales/Profit Loss %**
+- **Measures:** Adjusted Profit/Sales, Returned Profit/Sales, **Adjusted Margin %**, **Return Impact %** (Sales Returned % & Profit Erosion %)
 - **Slicers:** Year → Quarter, Region
 - **Drill path:** Segment → Category → **Sub-Category (Top-5 / Bottom-3)**
-- **UX:** dynamic titles, combo charts (Profit + Margin % line), and a focused sub-category tooltip (Profit, Sales, Margin %, Loss %)
+- **UX:** dynamic titles, **combo charts (Profit bars + Margin % line)**, and focused sub-category tooltips (Profit, Sales, Margin %, Return Impact %)
+
+---
+
+## Model (Star Schema)
+![Star Schema](docs/model/star-schema.png)
 
 ---
 
 ## Screenshots
-
 **Segment overview**  
 ![Segment overview](docs/screenshots/segment.png)
 
 **Category breakdown**  
 ![Category breakdown](docs/screenshots/category.png)
 
-**Sub-Category drilldown (Top-5 / Bottom-3 with Margin % line + tooltip)**  
+**Sub-Category drilldown (Top-5 / Bottom-3 + Margin % line + tooltip)**  
 ![Sub-Category drilldown](docs/screenshots/subcategory.png)
 
-> Tip: if images don’t load, ensure they’re saved at `docs/screenshots/segment.png`, `category.png`, `subcategory.png`.
+**Tooltip example (hover on a Sub-Category)**  
+![Tooltip example](docs/screenshots/tooltip.png)
 
 ---
 
-## Executive highlights (default filters shown in screenshots)
+## Highlights & Findings (example with default filters)
+- **Winners (Top-5 Sub-Categories):** concentrated share of **Adjusted Profit** with healthy **Margin %**.
+- **Laggards (Bottom-3):** thin or negative profit; **Return Impact %** and **Margin %** make the erosion drivers obvious.
+- **Regional & seasonal context:** Year/Quarter and Region slicers localize actions.
 
-- **Where we win (Top-5 Sub-Categories):** e.g., *Accessories, Binders, Paper, Phones, Chairs* drive the bulk of **Adjusted Profit** with **healthy margins**.  
-- **Where we leak (Bottom-3):** e.g., *Tables, Supplies, Bookcases* show **negative or thin profit**. Margin % line makes the efficiency gap obvious.
-- **Returns pressure:** higher **Sales Loss %** aligns with lower margins in the laggards—clear targets for policy/process fixes.
-- **Actionability:** Use **Year/Quarter** and **Region** slicers to localize the plan (pricing, returns policy, vendor quality, ops).
-
----
-
-## How to use
-
-1. Open the `.pbix` (or the `.pbit` template) in Power BI Desktop.  
-2. Set **Year/Quarter** and **Region** from the slicers.  
-3. Scan **KPIs** (Adjusted Profit, Margin %, Sales Loss %).  
-4. Walk **Segment → Category → Sub-Category**.  
-5. On Sub-Category, focus on **Bottom-3**; hover bars for the **tooltip** drivers.
+**How to read it**
+1) Set **Year/Quarter** and **Region**.  
+2) Scan Segment → Category → Sub-Category.  
+3) On Sub-Category, focus on **Bottom-3**; hover bars for the tooltip drivers.  
+4) Use the **Margin % line** + **Return Impact %** to separate pricing/mix from returns pressure.
 
 ---
 
-## Repository contents
+## Getting started
+- Open `report/Profit-Returns-Dashboard.pbix` in Power BI Desktop  
+  _or_ open `report/Profit-Returns-Dashboard.pbit` and point to your (demo) data.
 
-- `report/` – Power BI report/template  
-- `docs/screenshots/` – the images above  
-- `dax/Measures.md` – key DAX (Adjusted Profit, Margin %, Loss %, Top-5/Bottom-3 flags, dynamic titles)
+---
 
-*Data is demo/sanitized for portfolio use. License: MIT.*
+## Repository
+- `report/` – PBIX (report) and/or PBIT (template)  
+- `docs/gif/` – walkthrough GIF  
+- `docs/screenshots/` – page & tooltip screenshots  
+- `docs/model/` – star-schema image  
+- `dax/Measures.md` – key DAX
+
+*Demo/sanitized data for portfolio purposes. License: MIT.*
