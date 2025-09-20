@@ -23,16 +23,16 @@
 
 ## Screenshots
 **Segment overview**  
-![Segment overview](docs/screenshots/segment)
+![Segment overview](docs/screenshots/segment.png)
 
 **Category breakdown**  
-![Category breakdown](docs/screenshots/category)
+![Category breakdown](docs/screenshots/category.png)
 
 **Sub-Category drilldown (Top-5 / Bottom-3 + Margin % line + tooltip)**  
-![Sub-Category drilldown](docs/screenshots/subcategory)
+![Sub-Category drilldown](docs/screenshots/subcategory.png)
 
 **Tooltip example (hover on a Sub-Category)**  
-![Tooltip example](docs/screenshots/tooltip)
+![Tooltip example](docs/screenshots/tooltip.png)
 
 ---
 
